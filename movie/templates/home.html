@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+  <h2 class="text" align="left" style="margin-top:30px;margin-left:180px;font-style:italic;">MOVIES</h2>
+
+    <br><br>
+    <div class="row">
+  {% for i in Movies %}
+
+
+      <div class="card bg-dark" style="width: 18rem;margin-left:200px;">
+          <br>
+          <img src="{{i.poster.url}}" class="card-img-top" alt="...">
+            <div class="card-body" style="color:white;">
+                <h5 class="card-title">NAME : {{i.title}} </h5>
+              <H6 class="card-text"> DIRECTORS NAME : {{i.director}} <br></H6><p class="text-decoration">YEAR :{{i.year}} </p>
+                <a  class="btn btn-danger" href="{% url 'movies:mdetails' i.id %}">More</a>
+            </div>
+      </div>
+
+{% endfor %}
+</div>
+
+{% endblock %}

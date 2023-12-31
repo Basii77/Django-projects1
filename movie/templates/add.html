@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br><br>
+<form method="POST" style="color:red;" enctype="multipart/form-data">
+  {% csrf_token %}
+<i style="font-size:25px;">MOVIE DETAILS</i>
+  <br><br>
+<div class="mb-3">
+  <label  class="form-label" >TITLE </label>
+  <input type="text" class="form-control" name="t" placeholder="Enter the Title">
+</div>
+<div class="mb-3">
+  <label  class="form-label" >DIRECTOR</label>
+  <input type="text" class="form-control" name="d" placeholder="Enter the Director">
+</div>
+
+<div class="mb-3">
+  <label class="form-label" >YEAR</label>
+  <input type="number" class="form-control" name="y" placeholder="Enter the Year">
+</div>
+
+<div class="mb-3">
+  <label class="form-label" >POSTER</label>
+  <input type="file" class="form-control" name="psr" >
+</div>
+<div class="mb-3">
+  <input type="submit">
+</div>
+</form>
+
+{% endblock %}

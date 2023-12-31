@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<h1>Movie Details</h1>
+<br>
+
+<table class="table table-bordered " style="color:black;" >
+    <tr>
+        <th>POSTER</th>
+        <td><img  src="{{Movies.poster.url}}" width="100px"height="100px" ></td>
+    </tr>
+    <tr>
+        <th>Movie ID</th>
+        <td>{{Movies.id}}</td>
+    </tr>
+    <tr>
+        <th>TITLE</th>
+        <td>{{Movies.title}}</td>
+    </tr>
+    <tr>
+        <th>DIRECTOR</th>
+        <td>{{Movies.director}}</td>
+    </tr>
+    <tr>
+        <th>YEAR</th>
+        <td>{{Movies.year}}</td>
+    </tr>
+
+    <tr>
+        <th>EDIT</th>
+        <td><a class="btn btn-success" href="{% url 'movies:editmoviebyid' Movies.id %}">Edit</a></td>
+    </tr>
+    <tr>
+        <th>DELETE</th>
+        <td><a class="btn btn-danger" href="{% url 'movies:deletemoviebyid' Movies.id %}">Delete</a></td>
+    </tr>
+
+
+
+
+
+{% endblock %}
+
